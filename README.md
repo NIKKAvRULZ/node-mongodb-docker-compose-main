@@ -1,94 +1,34 @@
-# 🚀 DevOps Lab 02: Docker Fundamentals
-### Module: Current Trends in Software Engineering (SE4010) - 2026
+# 🚀 DevOps Lab 02: Advanced Docker & Container Orchestration
+### [cite_start]Module: Current Trends in Software Engineering (SE4010) - 2026 
 
 ---
 
 ## 📖 Project Overview
-This repository contains the practical implementation of **Docker Fundamentals**. The lab focuses on understanding containerization by running official images, building custom Docker images for a Node.js application, and managing data persistence using Volumes and Bind Mounts.
+[cite_start]This repository focuses on professional Docker workflows, including image distribution [cite: 17][cite_start], multi-container orchestration using Docker Compose [cite: 35][cite_start], and build optimization[cite: 90]. [cite_start]The lab demonstrates how to manage a web application and a database as a single unit while optimizing build times through layer caching[cite: 107].
 
 ### ✨ Key Features
-* **Containerization**: Running official Nginx and custom Node.js containers.
-* **Custom Images**: Building and optimizing Docker images using a `Dockerfile`.
-* **Data Persistence**: Using **Docker Volumes** to persist data across container restarts.
-* **Host-Container Sync**: Implementing **Bind Mounts** to share files between the host and container.
-* **Docker Hub**: Tagging and pushing images to a remote repository.
+* [cite_start]**Docker Hub Integration**: Publishing and versioning images in a central registry[cite: 15, 20].
+* [cite_start]**Container Orchestration**: Deploying a Node.js web app and MongoDB using Docker Compose[cite: 33, 40].
+* [cite_start]**Build Optimization**: Implementing patterns to leverage Docker layer caching for faster CI/CD pipelines[cite: 90, 107].
+* [cite_start]**Network & Volume Management**: Persisting database data and managing internal container networking[cite: 66, 67, 71].
 
 ---
 
 ## 🛠 Tech Stack
 | Technology | Usage |
 | :--- | :--- |
-| **Docker Engine** | Container Runtime |
-| **Node.js** | Application Runtime |
-| **Docker Hub** | Image Registry |
-| **Nginx** | Web Server (Task 01) |
-| **Alpine Linux** | Base Image |
+| **Docker** | [cite_start]Containerization Platform [cite: 17] |
+| **Docker Compose** | [cite_start]Multi-container Orchestration [cite: 35] |
+| **Docker Hub** | [cite_start]Image Registry & Distribution [cite: 20] |
+| **Node.js** | [cite_start]Web Application Service [cite: 46] |
+| **MongoDB** | [cite_start]NoSQL Database Service [cite: 56, 57] |
 
 ---
 
 ## 📂 Project Structure
 ```text
-my-docker-app/
-├── Dockerfile          # Configuration to build the image
-└── index.js            # Simple Node.js Hello World application
-```
-
-## 🚀 Execution & Evidence
-
-### 1. Running Nginx (Task 01)
-Pulled and ran the official Nginx image mapping host port `8080` to container port `80`.
-* **Command:** `docker run -d -p 8080:80 nginx`
-* **URL:** `http://localhost:8080`
-
-> **Evidence:**
-> ![Nginx Screenshot](./nginx-output.png)
-> *(Note: Replace with your actual screenshot filename)*
-
-### 2. Custom Node.js App (Task 02)
-Containerized a simple "Hello World" Node.js application and pushed it to Docker Hub.
-* **Command:** `docker run -d -p 4000:3000 hello-world-app`
-* **URL:** `http://localhost:4000`
-
-> **Evidence:**
-> ![App Screenshot](./hello-world-app.png)
-
-### 3. Docker Volumes (Task 03)
-Used Docker Volumes to ensure data persists even if the container is removed.
-* **Volume Name:** `hello-world-volume`
-* **Mount Point:** `/app/data`
-
-> **Evidence:**
-> ![Volume Screenshot](./volume-check.png)
-
-### 4. Bind Mounts (Task 04)
-Linked a host directory to the container to verify real-time file synchronization for development.
-* **Host Path:** `./my-host-data`
-* **Container Path:** `/app/data`
-
-> **Evidence:**
-> ![Bind Mount Screenshot](./bind-mount.png)
-
----
-
-## 📋 Docker Commands Used
-| Task | Command | Description |
-| :--- | :--- | :--- |
-| **Build** | `docker build -t hello-world-app .` | Build the image from Dockerfile |
-| **Run** | `docker run -d -p 4000:3000 <image>` | Run container in background |
-| **Volume** | `docker volume create <name>` | Create a managed volume |
-| **Push** | `docker push <username>/<image>` | Upload image to Docker Hub |
-| **Exec** | `docker exec -it <id> sh` | Access container shell |
-
----
-
-## ✍️ Student Information
-* **Name:** Nithika Perera
-* **IT Number:** IT22061348
-* **Module:** Current Trends in Software Engineering (SE4010)
-* **Institute:** SLIIT - Faculty of Computing
-
----
-
-<p align="center">
-  <b>Expected Outcome:</b> Successfully demonstrated Docker image creation, container management, and data persistence strategies.
-</p>
+/
+[cite_start]├── docker-compose.yml     # Orchestration for Web & Mongo services [cite: 42]
+[cite_start]├── Dockerfile             # Optimized build configuration [cite: 91]
+[cite_start]├── package.json           # Node.js dependencies [cite: 94]
+└── server.js              # Application entry point

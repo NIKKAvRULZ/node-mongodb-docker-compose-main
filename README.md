@@ -32,3 +32,46 @@
 [cite_start]├── Dockerfile             # Optimized build configuration [cite: 91]
 [cite_start]├── package.json           # Node.js dependencies [cite: 94]
 └── server.js              # Application entry point
+```
+
+## 🚀 Execution & Evidence
+
+### 1. Multi-Container Deployment
+[cite_start]The application is deployed using Docker Compose, which simplifies the complex process of running individual containers manually[cite: 35, 38, 39].
+* [cite_start]**Command:** `docker compose up` [cite: 62]
+
+> **Evidence:**
+> ![Docker Compose Screenshot](./docker_compose_up.png)
+
+### 2. Service Verification
+[cite_start]Status of the running containers, including the persistent volumes and internal networks created for the application[cite: 65, 66, 67].
+* [cite_start]**Verification Commands:** * `docker ps` (Check container status) [cite: 65]
+    * [cite_start]`docker network ls` (View application networks) [cite: 66]
+    * [cite_start]`docker volume ls` (View database volumes) [cite: 68]
+
+> **Evidence:**
+> ![Service Verification](./docker_verification.png)
+
+### 3. Build Optimization (Docker Caching)
+[cite_start]By copying `package.json` before the source code, we ensure that `npm install` only re-runs if dependencies change, drastically reducing CI/CD build times[cite: 90, 94, 95].
+* **Optimized Step:** ```dockerfile
+    COPY package*.json ./
+    RUN npm install
+    [cite_start]``` [cite: 94, 95]
+
+> **Evidence:**
+> ![Docker History Optimization](./docker_history.png)
+
+---
+
+## ✍️ Student Information
+* **Name:** Nithika Perera
+* **IT Number:** [Your IT Number]
+* **Module:** Current Trends in Software Engineering (SE4010) [cite: 2]
+* **Institute:** SLIIT - Faculty of Computing [cite: 1]
+
+---
+
+<p align="center">
+  <b>Expected Outcome:</b> Successfully optimized Docker build pipelines and orchestrated a multi-container environment with persistent storage[cite: 107].
+</p>

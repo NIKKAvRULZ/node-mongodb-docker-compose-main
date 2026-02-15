@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  web:
+    image: node:alpine
+    container_name: web-app
+    working_dir: /user/app
+    volumes:
+      - ./:/user/app
+    command: npm start
+    ports:
+      - "3000:3000"
+    depends_on :
+      - mongo
+  mongo:
+    image: mongo
+    container_name: mongo-db
+    ports:
+      - "27017:27017"

@@ -66,12 +66,12 @@ By copying `package.json` before the source code, we ensure that `npm install` o
 
 ## ✍️ Student Information
 * **Name:** Nithika Perera
-* **IT Number:** [Your IT Number]
-* **Module:** Current Trends in Software Engineering (SE4010) [cite: 2]
-* **Institute:** SLIIT - Faculty of Computing [cite: 1]
+* **IT Number:** IT22061348
+* **Module:** Current Trends in Software Engineering (SE4010) 
+* **Institute:** SLIIT - Faculty of Computing
 
 ---
 
 <p align="center">
-  <b>Expected Outcome:</b> Successfully optimized Docker build pipelines and orchestrated a multi-container environment with persistent storage[cite: 107].
+  <b>Expected Outcome:</b> Successfully optimized Docker build pipelines and orchestrated a multi-container environment with persistent storage.
 </p>

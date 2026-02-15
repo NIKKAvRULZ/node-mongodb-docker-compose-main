@@ -1,4 +1,4 @@
-# 🚀 DevOps Lab 01: Docker Fundamentals
+# 🚀 DevOps Lab 02: Docker Fundamentals
 ### Module: Current Trends in Software Engineering (SE4010) - 2026
 
 ---
